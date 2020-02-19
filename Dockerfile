@@ -1,4 +1,4 @@
-FROM quay.io/quarkus/centos-quarkus-maven:19.1.1 AS build
+FROM quay.io/quarkus/centos-quarkus-maven:19.3.0 AS build
 COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
 RUN mvn -f /usr/src/app/pom.xml -Pnative clean package
