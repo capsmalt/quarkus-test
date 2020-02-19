@@ -1,7 +1,7 @@
-FROM quay.io/quarkus/centos-quarkus-maven:19.3.0 AS build
+FROM quay.io/quarkus/centos-quarkus-maven:19.1.1 AS build
 COPY src /usr/src/app/src
 COPY pom.xml /usr/src/app
-RUN mvn -f /usr/src/app/pom.xml -Pnative clean package
+RUN mvn -f /usr/src/app/pom.xml -Dnative clean package
 
 FROM registry.access.redhat.com/ubi8/ubi-minimal
 WORKDIR /work/
